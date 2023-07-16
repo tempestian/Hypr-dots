@@ -1,0 +1,117 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #cba6f7;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+}
+
+#workspaces button.focused {
+    color: #89b4fa;
+    background: #eba0ac;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #11111b;
+    color: #cdd6f4;
+    border-radius: 10px;
+}
+
+#window,
+#clock,
+#pulseaudio,
+#workspaces,
+#tray, 
+#custom-wallpapers,
+#custom-exit	{
+    background: #1e1e2e;
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 1px solid #181825;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#clock {
+    color: #cba6f7 ;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 5px;
+    border-right: 10px;
+}
+
+#pulseaudio {
+    color: #cba6f7;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 5px;
+}
+
+#custom-wallpapers,
+#custom-exit {
+    color: #cba6f7;
+    background: #1e1e2e;
+    border-radius: 10px 10px 10px 10px;
+    border-left: 10px;
+    border-right: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 0px 10px;  
+}
