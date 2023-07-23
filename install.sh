@@ -35,7 +35,7 @@ echo "Installed paru."
 fi
 
 echo "Installing dependencies..."
-$sucmd pacman -Sy hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent pamixer pulseaudio pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
+$sucmd pacman -Sy hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent pamixer pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
 paru -S swww wlogout catppuccin-gtk-theme-mocha sddm-catppuccin-git catppuccin-cursors-mocha hyprshot ttf-jetbrains-mono-nerd kvantum-theme-catppuccin-git
 
 swww init
