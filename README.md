@@ -4,17 +4,9 @@
 This is a customized dotfiles collection with catppuccin mocha palette. 
 
 ## Screenshots
-Desktop:
-![Desktop](screenshots/desktop.png)
+(screenshots/1.png)
 
-Wofi (App Menu)
-![Wofi](screenshots/wofi.png)
-
-Kitty (Terminal)
-![Kitty + Neofetch](screenshots/kitty.png)
-
-Dolphin (File Manager)
-![Dolphin](screenshots/dolphin.png)
+(screenshots/2.png)
 
 ## Installation
 
