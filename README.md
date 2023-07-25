@@ -4,7 +4,9 @@
 This is a customized dotfiles collection with catppuccin mocha palette. 
 
 ## Screenshots
-<img src="https://github.com/tempestian/Hypr-dots/blob/main/screenshots/1.png"
+![](screenshots/1.png)
+
+![](screenshots/2.png)
 
 ## Installation
 
