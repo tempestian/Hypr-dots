@@ -38,8 +38,6 @@ echo "Installing dependencies..."
 $sucmd pacman -Sy hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent btop pamixer pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
 paru -S swww wlogout catppuccin-gtk-theme-mocha sddm-catppuccin-git catppuccin-cursors-mocha hyprshot ttf-jetbrains-mono-nerd kvantum-theme-catppuccin-git
 
-swww init
-
 echo "Enabling SDDM..."
 $sucmd systemctl enable sddm
 
@@ -56,6 +54,14 @@ cd Tela-circle-icon-theme
 chmod +x install.sh
 bash install.sh -c purple
 cd
+
+echo "Default app settings..."
+xdg-mime default vim.desktop text/plain
+xdg-mime default org.kde.dolphin.desktop inode/directory
+xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+kwriteconfig5 --file ~/.local/share/kservices5/ServiceMenus/konsolehere.desktop --group "Desktop Action OpenTerminal" --key "Name" "Open in Kitty Terminal"
+kwriteconfig5 --file ~/.local/share/kservices5/ServiceMenus/konsolehere.desktop --group "Desktop Action OpenTerminal" --key "Exec" "kitty"
 
 echo "Copying files..."
 $sucmd cp $tmp/etc/environment /etc
