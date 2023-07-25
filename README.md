@@ -4,9 +4,9 @@
 This is a customized dotfiles collection with catppuccin mocha palette. 
 
 ## Screenshots
-(screenshots/1.png)
+[New Upgrade](screenshots/1.png)
 
-(screenshots/2.png)
+[New Upgrade](screenshots/2.png)
 
 ## Installation
 
