@@ -4,6 +4,7 @@
 
 sucmd=sudo # sudo or doas??
 
+echo "DO NOT RUN THIS SCRIPT AS ROOT!!!"
 echo "This script will install necessary packages and overwrite any file that conflicts with Hypr-dots config files. You will NOT prompted for any change."
 echo "Make sure to run this at Hypr-dots folder."
 echo "Are you sure you want to continue? (Press any key to continue or ctrl + c to exit without making ANY change...)"
@@ -20,7 +21,7 @@ echo "Checking if paru is installed..."
 if paru --version 2&> /dev/null ; then
 echo "Paru is installed."
 else
-echo "Paru is not is not installed."
+echo "Paru is not installed."
 echo "Installing paru..."
 if ! git -v 2&> /dev/null ; then
 $sucmd pacman -Sy git
