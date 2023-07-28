@@ -28,20 +28,16 @@ cd
 echo "Upgrading system..."
 $sucmd pacman -Syu
 echo "Checking if paru is installed..."
-command -v paru
+if [[ $(which paru) ]]; then
     echo "Paru is already installed."
 else
-echo "Paru not found. Installing paru..."
-if ! git -v 2&> /dev/null ; then
-$sucmd pacman -S git
-fi
-$sucmd pacman -S fakeroot go make gcc --noconfirm --needed
-cd /tmp
-git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin/
-cd /tmp/paru-bin/
-makepkg -si
-cd
-echo "Installed paru."
+    echo "Paru not found. Installing paru..."
+    $sucmd pacman -Syy git fakeroot go make gcc --noconfirm --needed
+    git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin/
+    cd /tmp/paru-bin/
+    makepkg -si
+    echo "Paru installed!"
+fi 
 
 echo "Installing dependencies..."
 $sucmd pacman -S --needed hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent btop pamixer pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
