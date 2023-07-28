@@ -2,7 +2,17 @@
 # Hypr-dots installer script for Arch Linux.
 # Do NOT run this script as root...
 
-sucmd=sudo # sudo or doas??
+unset -v sucmd
+
+while true; do
+    read -p "Enter the privilege escalation command (sudo, doas...): " sucmd
+    if which "$sucmd" > /dev/null 2>&1; then
+        echo "Command exists! Continuing with $sucmd."
+        break
+    else
+        echo "Command does not exist. Try again."
+    fi
+done
 
 echo "DO NOT RUN THIS SCRIPT AS ROOT!!!"
 echo "This script will install necessary packages and overwrite any file that conflicts with Hypr-dots config files. You will NOT prompted for any change."
@@ -18,22 +28,20 @@ cd
 echo "Upgrading system..."
 $sucmd pacman -Syu
 echo "Checking if paru is installed..."
-if paru --version 2&> /dev/null ; then
-echo "Paru is installed."
+command -v paru
+    echo "Paru is already installed."
 else
-echo "Paru is not installed."
-echo "Installing paru..."
+echo "Paru not found. Installing paru..."
 if ! git -v 2&> /dev/null ; then
 $sucmd pacman -S git
 fi
-$sucmd pacman -S fakeroot go make gcc --noconfirm
+$sucmd pacman -S fakeroot go make gcc --noconfirm --needed
 cd /tmp
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
+git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin/
+cd /tmp/paru-bin/
 makepkg -si
 cd
 echo "Installed paru."
-fi
 
 echo "Installing dependencies..."
 $sucmd pacman -S --needed hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent btop pamixer pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
