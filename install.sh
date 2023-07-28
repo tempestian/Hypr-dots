@@ -32,7 +32,7 @@ if [[ $(which paru) ]]; then
     echo "Paru is already installed."
 else
     echo "Paru not found. Installing paru..."
-    $sucmd pacman -S git fakeroot go make gcc --noconfirm
+    $sucmd pacman -Syy git fakeroot go make gcc --noconfirm --needed
     git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin/
     cd /tmp/paru-bin/
     makepkg -si
