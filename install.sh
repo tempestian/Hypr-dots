@@ -28,7 +28,7 @@ cd
 echo "Upgrading system..."
 $sucmd pacman -Syu
 echo "Checking if paru is installed..."
-if [[ $(which paru) ]]; then
+command -v paru
     echo "Paru is already installed."
 else
     echo "Paru not found. Installing paru..."
