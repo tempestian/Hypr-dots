@@ -24,7 +24,7 @@ else
 echo "Paru is not installed."
 echo "Installing paru..."
 if ! git -v 2&> /dev/null ; then
-$sucmd pacman -Sy git
+$sucmd pacman -S git
 fi
 $sucmd pacman -S fakeroot go make gcc --noconfirm
 cd /tmp
