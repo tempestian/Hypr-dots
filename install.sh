@@ -69,4 +69,6 @@ $sucmd cp $tmp/etc/sddm.conf /etc
 mkdir ~/.config bb&> /dev/null
 cp -r $tmp/config/* ~/.config
 
+rm -rf $tmp
+
 echo "Installation finished!"
