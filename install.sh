@@ -26,7 +26,7 @@ echo "Installing paru..."
 if ! git -v 2&> /dev/null ; then
 $sucmd pacman -Sy git
 fi
-$sucmd pacman -Sy fakeroot go make gcc --noconfirm
+$sucmd pacman -S fakeroot go make gcc --noconfirm
 cd /tmp
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin
@@ -36,7 +36,7 @@ echo "Installed paru."
 fi
 
 echo "Installing dependencies..."
-$sucmd pacman -Sy hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent btop pamixer pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
+$sucmd pacman -S hyprland waybar xdg-desktop-portal-hyprland polkit-kde-agent btop pamixer pavucontrol fish kitty starship noto-fonts dolphin mako wofi qt5ct kvantum lxappearance pkgconf which neofetch --noconfirm
 paru -S swww wlogout catppuccin-gtk-theme-mocha sddm-catppuccin-git catppuccin-cursors-mocha hyprshot ttf-jetbrains-mono-nerd kvantum-theme-catppuccin-git
 
 echo "Enabling SDDM..."
